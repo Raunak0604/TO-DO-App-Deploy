@@ -1,0 +1,44 @@
+sudo apt-get update
+pip3 install django
+sudo apt install python3-pip
+pip3 install django
+python3 manage.py makemigrations
+python3 manage.py runserver 0.0.0.0:8000
+nohup python3 manage.py runserver 0.0.0.0:8000 &
+lsof -i:8000
+kill -9 3228
+
+docker
+vi Dockerfile
+sudo docker build . -t todo-app
+sudo docker images
+sudo docker run -p 8000:8000 ec94c4a02582
+sudo docker ps
+
+sudo apt update
+sudo apt install openjdk-11-jre
+java -version
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+sudo systemctl stop jenkins
+http://52.87.160.55:8080/
+
+Jenkins using Docker
+sudo docker pull jenkins/jenkins
+sudo docker run -d -p 8080:8080 jenkins/jenkins
+sudo docker logs containerId 
+
+Jenkins Execute shell
+cd /home/ubuntu/project/TO-DO-App-Deploy/
+sudo docker build . -t todo-app
+sudo docker run -p 8000:8000 todo-app
+
+
