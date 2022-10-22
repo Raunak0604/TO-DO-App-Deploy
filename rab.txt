@@ -40,5 +40,6 @@ Jenkins Execute shell
 cd /home/ubuntu/project/TO-DO-App-Deploy/
 sudo docker build . -t todo-app
 sudo docker run -p 8000:8000 todo-app
+sudo usermod -a -G docker jenkins
 
 
