@@ -12,6 +12,9 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
+                    sh 'if docker images -f "rabbit0604/todoapp" | grep ago --quiet;'
+                    sh 'then docker rmi -f $(docker images -f "rabbit0604/todoapp" -q)'
+                    sh 'fi'
                     sh 'docker build -t rabbit0604/todoapp .'
                 }
             }
