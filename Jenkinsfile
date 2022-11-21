@@ -13,9 +13,6 @@ pipeline {
             steps{
                 script{
                     sh 'docker build -t rabbit0604/todoapp .'
-                    sh 'if docker images -f "dangling=true" | grep ago --quiet;'
-                    sh 'then docker rmi -f $(docker images -f "dangling=true" -q)'
-                    sh 'fi'
                     
                 }
             }
